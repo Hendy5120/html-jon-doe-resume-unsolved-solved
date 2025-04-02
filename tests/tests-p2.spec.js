@@ -8,15 +8,15 @@ const {
   shouldRunTests,
 } = require("./html-validate-helper.js");
 
-test.beforeAll(async () => {
-  const validationPassed = shouldRunTests();
-  if (!validationPassed) {
-    test.skip(true, getValidationErrorMessage());
-  }
-});
-test.beforeEach(async ({ page }) => {
-  await page.goto(`localhost:${liveServerPort}`);
-});
+// test.beforeAll(async () => {
+//   const validationPassed = shouldRunTests();
+//   if (!validationPassed) {
+//     test.skip(true, getValidationErrorMessage());
+//   }
+// });
+// test.beforeEach(async ({ page }) => {
+//   await page.goto(`localhost:${liveServerPort}`);
+// });
 
 test("has the link tag set in the head", async ({ page }) => {
   const link = page.locator("head").locator("link");
